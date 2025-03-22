@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Backlog Comment Link Copier - 設定</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      min-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    h1 {
+      color: #205081;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"], 
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 10px;
+    }
+    
+    .domain-list {
+      margin-bottom: 10px;
+    }
+    
+    .domain-item {
+      display: flex;
+      margin-bottom: 5px;
+    }
+    
+    .domain-item input {
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+    
+    button {
+      background-color: #205081;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    
+    button:hover {
+      background-color: #3572b0;
+    }
+    
+    .button-group {
+      margin-top: 20px;
+    }
+    
+    .status {
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 4px;
+      display: none;
+    }
+    
+    .success {
+      background-color: #dff0d8;
+      color: #3c763d;
+      border: 1px solid #d6e9c6;
+    }
+    
+    .error {
+      background-color: #f2dede;
+      color: #a94442;
+      border: 1px solid #ebccd1;
+    }
+    
+    .help-text {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Backlog Comment Link Copier - 設定</h1>
+  
+  <div class="form-group">
+    <label for="commentSelector">コメント日時要素のセレクタ</label>
+    <input type="text" id="commentSelector" placeholder=".user-icon-set__sub-line a.user-icon-set__sub-line-anchor">
+    <div class="help-text">Backlogのコメント日時要素を特定するためのCSSセレクタを指定します。Backlogの画面構造が変更された場合に調整が必要になる場合があります。</div>
+  </div>
+  
+  <div class="form-group">
+    <label for="backlogDomains">Backlogドメイン</label>
+    <textarea id="backlogDomains" rows="3" placeholder="*.backlog.jp"></textarea>
+    <div class="help-text">対象とするBacklogドメインを指定します。1行に1つのドメインを入力してください。例: example.backlog.jp</div>
+  </div>
+  
+  <div class="button-group">
+    <button id="save">設定を保存</button>
+    <button id="reset">デフォルト設定に戻す</button>
+  </div>
+  
+  <div id="status" class="status"></div>
+  
+  <script src="options.js"></script>
+</body>
+</html>
